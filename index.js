@@ -15,6 +15,9 @@ var errorHandler = function (error) {
 
 var clickHandler = function () {
     let givenInput = textInput.value;
+    if(!givenInput){
+        alert("Please enter text prioperly!");
+    }
     fetch(getTranslationURL(givenInput))
     .then(response => response.json())
     .then(json => {
